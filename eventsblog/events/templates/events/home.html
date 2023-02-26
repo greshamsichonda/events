@@ -1,0 +1,31 @@
+{% extends 'events/base.html' %}
+  {% block content %}
+  <center>
+    <h2>
+        welocme To{{login}} Events Site{{year}} {{month}}
+    </h2>
+    <br>
+    Login/Create account to access the latest happenings around
+    <br>
+    <br>
+    {% if user.is_authenticated %}
+
+    {% else %}
+      <li class="nav-item">
+        <a class="btn btn-primary" href=" {% url 'login' %} ">login</a>
+      </li>
+      <br>
+      <li class="nav-item">
+        <a class="btn btn-secondary" href=" {% url 'register-user' %} ">create account</a>
+      </li>
+      <br>
+    {% endif %}
+    {{cal|safe}}<br>
+    copyright(c2023){{current_year}}
+
+</center>
+  {% endblock content %}
+
+
+
+

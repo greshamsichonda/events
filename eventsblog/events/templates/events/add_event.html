@@ -1,0 +1,26 @@
+{% extends 'events/base.html' %}
+  {% block content %}
+
+    <br><br><br><br>
+    <h2>
+        Add event to the database
+    </h2>
+    <br>
+    {% if submitted %}
+    hey your event was submitted successfully
+   {% else %}
+   <div class="container">
+       <form action="" method="POST">
+           {{form.as_p}}
+           {% csrf_token %}
+           <input type="submit" value="submit" class="btn btn-success">
+       </form>
+    </div>   
+   {% endif %}
+    <br>
+
+  {% endblock content %}
+
+
+
+

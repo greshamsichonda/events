@@ -1,0 +1,21 @@
+{% extends 'events/base.html' %}
+  {% block content %}
+    <br><br>
+    <div class="container">
+    <h2>Create Account</h2>
+    {% if form.errors %}
+     <p>there was an error printing the form</p>
+    {% endif %}
+    <br>
+        <form action=" {% url 'register-user' %} " method="POST">
+          {% csrf_token %}
+         {{form.as_p}}
+         <br><br>
+            <input type="submit" class="btn btn-primary" value="submit">
+        </form>
+      </div>      
+  {% endblock content %}
+
+
+
+
